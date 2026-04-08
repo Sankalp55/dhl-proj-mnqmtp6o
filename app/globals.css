@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DHL Logistics palette (HSL derived from hex):
+   primary #FFCC00 -> 48 100% 50%
+   secondary/accent/border/destructive #D40511 -> 356 95% 43%
+   foreground/muted-foreground/primary-foreground/card-foreground #333333 -> 0 0% 20%
+   background/muted/card #FFFFFF -> 0 0% 100%
+*/
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+
+    --card: 0 0% 100%;
+
+    --primary: 48 100% 50%;
+    --primary-foreground: 0 0% 20%;
+
+    --secondary: 356 95% 43%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 356 95% 43%;
+
+    --muted: 0 0% 100%;
+    --muted-foreground: 0 0% 20%;
+
+    --border: 356 95% 43%;
+    --ring: 48 100% 50%;
+  }
+
+  /* Included for completeness; blueprint sets darkMode=false */
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 10%;
+
+    --primary: 48 100% 50%;
+    --primary-foreground: 0 0% 12%;
+
+    --secondary: 356 95% 43%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 356 95% 43%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 75%;
+
+    --border: 356 95% 43%;
+    --ring: 48 100% 50%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: Arial, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, "Apple Color Emoji",
+      "Segoe UI Emoji";
+  }
+}
